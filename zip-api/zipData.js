@@ -7,6 +7,8 @@ const records = parse(data, { columns: true });
 
 const byZip = {};
 const byCity = {};
+const byState = {};
+
 
 records.forEach((rec) => {
   if(byZip[rec.Zipcode] === undefined) {
@@ -18,7 +20,12 @@ records.forEach((rec) => {
     byCity[rec.City] = [];
   }
   byCity[rec.City].push(rec.Zipcode);
+
+   if(byState[rec.State] === undefined) {
+    byState[rec.State] = [];
+  }
+  byState[rec.State].push(rec.Zipcode);
 });
 
 
-module.exports = { byZip, byCity };
+module.exports = { byZip, byCity, byState };
