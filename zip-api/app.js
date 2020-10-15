@@ -71,6 +71,10 @@ app.get('/city/:cityname', (req, res) => {
 
 
 app.get('/state/:sp', (req, res) => {
+  /* test
+  if (sp === underfined)
+  throw(Exeption);
+  */
   const st = zipdb.byState[req.params.sp];
   	res.json(st);
   }
