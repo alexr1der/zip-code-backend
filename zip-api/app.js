@@ -58,7 +58,7 @@ app.get('/zip/11239', (req, res) => {
 app.get('/zip/:zipcode', (req, res) => {
   const zip = zipdb.byZip[req.params.zipcode];
   	res.json(zip);
-  }//I have to catch an exeption when zip is not inserted
+  }
 );
 
 
@@ -69,18 +69,18 @@ app.get('/city/:cityname', (req, res) => {
   }
 );
 
-
+/*
 app.get('/state/:sp', (req, res) => {
-  /* test
+   test
   if (sp === underfined)
   throw(Exeption);
-  */
+
   const st = zipdb.byState[req.params.sp];
   	res.json(st);
   }
 );
-
-
+needs to be clarified in zipclass
+  */
 
 
 
